@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Screen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@100..900&family=Fira+Code:wght@300..700&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+    <style type="text/tailwindcss">
+      @import "tailwindcss";
+      @theme inline {
+        --color-background: var(--background);
+        --color-foreground: var(--foreground);
+        --color-primary: var(--primary);
+        --color-primary-foreground: var(--primary-foreground);
+        --color-secondary: var(--secondary);
+        --color-secondary-foreground: var(--secondary-foreground);
+        --color-tertiary: var(--tertiary);
+        --color-muted: var(--muted);
+        --color-muted-foreground: var(--muted-foreground);
+        --color-accent: var(--accent);
+        --color-destructive: var(--destructive);
+        --color-card: var(--card);
+        --color-card-foreground: var(--card-foreground);
+        --color-border: var(--border);
+        --color-input: var(--input);
+        --color-ring: var(--ring);
+        --radius-sm: calc(var(--radius) - 4px);
+        --radius-md: calc(var(--radius) - 2px);
+        --radius-lg: var(--radius);
+        --font-family-sans: var(--font-sans);
+        --font-family-heading: var(--font-heading);
+      }
+      :root { --background: #ffffff;
+        --primary: #2563eb;
+        --border: #e2e8f0;
+        --foreground: #0f172a;
+        --ring: #2563eb;
+        --secondary: #f1f5f9;
+        --radius: 0.75rem;
+        --card: #ffffff; }
+    </style>
+  </head>
+  <body>
+<div class="min-h-screen w-full bg-background flex flex-col relative font-sans">
+  <!-- Navigation -->
+  <nav class="flex items-center justify-between px-6 py-4 border-b border-border bg-background/80 backdrop-blur-md sticky top-0 z-50">
+    <div class="flex items-center gap-2">
+      <div class="bg-primary p-2 rounded-lg">
+        <iconify-icon icon="lucide:globe" class="text-white text-2xl"></iconify-icon>
+      </div>
+      <span class="text-2xl font-heading font-bold tracking-tight text-foreground">Deulpar</span>
+    </div>
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
+      <a href="#" class="hover:text-primary transition-colors">Browse Websites</a>
+      <a href="#" class="hover:text-primary transition-colors">How it Works</a>
+      <a href="#" class="hover:text-primary transition-colors">Pricing</a>
+      <a href="#" class="hover:text-primary transition-colors">Support</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <button onclick="document.getElementById('reviews-section').scrollIntoView({behavior: 'smooth'})" class="px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity shadow-md">
+        Get Started
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative py-20 px-6 overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="flex flex-col gap-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
+          <iconify-icon icon="lucide:shield-check"></iconify-icon>
+          Trusted Marketplace
+        </div>
+        <h1 class="text-5xl md:text-6xl font-heading font-extrabold text-foreground leading-[1.1]">
+          Buy & Sell <span class="text-primary">Premium</span> Websites Online.
+        </h1>
+        <p class="text-lg text-muted-foreground max-w-lg leading-relaxed">
+          Deulpar is the world's most trusted marketplace for ready-to-launch websites. Secure transactions, verified sellers, and 24/7 support.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 mt-4">
+          <button onclick="document.getElementById('reviews-section').scrollIntoView({behavior: 'smooth'})" class="px-8 py-4 rounded-xl bg-primary text-primary-foreground font-bold text-lg shadow-xl shadow-primary/20 hover:scale-105 transition-transform flex items-center justify-center gap-2">
+            <iconify-icon icon="lucide:star" class="text-xl"></iconify-icon>
+            Read Reviews
+          </button>
+        <a href="https://8795a8cf69214a9cb8fafd2a5e143049.elf.site">  <button class="px-30 py-2! rounded-xl border-5 border-border bg-background text-foreground font-bold text-lg hover:bg-secondary transition-colors">
+            ask with deulparAi
+          </button></a>
+        </div>
+        <div class="flex items-center gap-4 pt-4">
+          <div class="flex -space-x-3">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full border-2 border-background" alt="User">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-10 h-10 rounded-full border-2 border-background" alt="User">
+            <img src="https://randomuser.me/api/portraits/men/67.jpg" class="w-10 h-10 rounded-full border-2 border-background" alt="User">
+            <div class="w-10 h-10 rounded-full border-2 border-background bg-secondary flex items-center justify-center text-xs font-bold">...</div>
+          </div>
+          <div class="flex flex-col">
+            <div class="flex text-yellow-400">
+              <iconify-icon icon="lucide:star"></iconify-icon>
+              <iconify-icon icon="lucide:star"></iconify-icon>
+              <iconify-icon icon="lucide:star"></iconify-icon>
+              <iconify-icon icon="lucide:star"></iconify-icon>
+              <iconify-icon icon="lucide:star"></iconify-icon>
+            </div>
+            <span class="text-sm text-muted-foreground">Highest Rated Marketplace</span>
+          </div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="absolute -inset-4 bg-primary/5 blur-3xl rounded-full"></div>
+        <img src="https://uxmagic.blob.core.windows.net/public/agent-images/hero-websites-1779332571470-1jnkfdc736.png" class="relative rounded-2xl shadow-2xl border border-border" alt="Websites Showcase">
+      </div>
+    </div>
+  </section>
+
+  <!-- Websites for Sale Section -->
+  <section class="py-20 px-6 bg-secondary/30">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+        <div>
+          <h2 class="text-4xl font-heading font-bold mb-2">Websites for Sale</h2>
+          <p class="text-muted-foreground">Hand-picked premium assets ready for acquisition</p>
+        </div>
+        <a href="#" class="text-primary font-bold flex items-center gap-2 hover:underline">
+          View All Listings <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Website Card 1 -->
+        <div class="bg-card rounded-2xl overflow-hidden border border-border hover:shadow-xl transition-all group">
+          <div class="aspect-video overflow-hidden relative">
+            <img src="https://uxmagic.blob.core.windows.net/public/agent-images/web-sell-1-1779335292213-pvnb1i3z9n.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="E-commerce Store">
+            <div class="absolute top-4 right-4 bg-background/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-primary border border-primary/20">
+              E-COMMERCE
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Eco-Friendly Home Decor Store</h3>
+            <p class="text-sm text-muted-foreground mb-4 line-clamp-2">Fully automated dropshipping store with verified suppliers and $2.5k monthly recurring revenue.</p>
+            <div class="flex items-center justify-between pt-4 border-t border-border">
+              <div>
+                <span class="block text-[10px] text-muted-foreground uppercase font-bold tracking-wider">Asking Price</span>
+                <span class="text-xl font-extrabold text-foreground">$150</span>
+              </div>
+              <button class="px-4 py-2 bg-primary/10 text-primary rounded-lg font-bold text-sm hover:bg-primary hover:text-white transition-all">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Website Card 2 -->
+        <div class="bg-card rounded-2xl overflow-hidden border border-border hover:shadow-xl transition-all group">
+          <div class="aspect-video overflow-hidden relative">
+            <img src="https://uxmagic.blob.core.windows.net/public/agent-images/web-sell-2-1779335299107-gaqy3ms9ib9.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="SaaS Tool">
+            <div class="absolute top-4 right-4 bg-background/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-primary border border-primary/20">
+              SAAS
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">AI Content Generation Suite</h3>
+            <p class="text-sm text-muted-foreground mb-4 line-clamp-2">Proprietary AI engine for marketing copy. 450+ active paid subscribers with low churn rate.</p>
+            <div class="flex items-center justify-between pt-4 border-t border-border">
+              <div>
+                <span class="block text-[10px] text-muted-foreground uppercase font-bold tracking-wider">Asking Price</span>
+                <span class="text-xl font-extrabold text-foreground">$200</span>
+              </div>
+              <button class="px-4 py-2 bg-primary/10 text-primary rounded-lg font-bold text-sm hover:bg-primary hover:text-white transition-all">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Website Card 3 -->
+        <div class="bg-card rounded-2xl overflow-hidden border border-border hover:shadow-xl transition-all group">
+          <div class="aspect-video overflow-hidden relative">
+            <img src="https://uxmagic.blob.core.windows.net/public/agent-images/web-sell-3-1779335306163-19aq5dzyfew.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Real Estate Portal">
+            <div class="absolute top-4 right-4 bg-background/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-primary border border-primary/20">
+              REAL ESTATE
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Luxury Villas Rental Directory</h3>
+            <p class="text-sm text-muted-foreground mb-4 line-clamp-2">High-authority domain in the travel niche. Strong SEO rankings for premium keywords.</p>
+            <div class="flex items-center justify-between pt-4 border-t border-border">
+              <div>
+                <span class="block text-[10px] text-muted-foreground uppercase font-bold tracking-wider">Asking Price</span>
+                <span class="text-xl font-extrabold text-foreground">$1000</span>
+              </div>
+              <button class="px-4 py-2 bg-primary/10 text-primary rounded-lg font-bold text-sm hover:bg-primary hover:text-white transition-all">Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Review Section -->
+  <section id="reviews-section" class="py-24 px-6 bg-background">
+    <div class="max-w-3xl mx-auto">
+      <div class="flex justify-start mb-8">
+        <button class="w-[1500px] py-3 rounded-xl bg-blue-600 text-white font-bold border border-blue-700 hover:bg-blue-700 transition-all flex flex-col items-center justify-center gap-1 shadow-md overflow-hidden text-[10px]">
+          <iconify-icon icon="lucide:mail" class="text-lg"></iconify-icon>
+          
+          <span class="whitespace-nowrap">Contact us to developer</span>
+        </button>
+      </div>
+      <div class="flex items-center justify-between mb-12 border-b border-border pb-6">
+        <div>
+          <h2 class="text-3xl font-heading font-bold">Customer Reviews</h2>
+          <p class="text-muted-foreground text-sm">Real experiences from our global community</p>
+        </div>
+        <div class="flex items-center gap-2 px-4 py-2 bg-secondary rounded-full text-xs font-bold text-foreground">
+          <iconify-icon icon="lucide:check-circle" class="text-primary"></iconify-icon>
+          VERIFIED
+        </div>
+      </div>
+
+      <!-- Review Input Form -->
+      <div class="bg-card border border-border rounded-2xl p-6 mb-12 shadow-sm">
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg">Y</div>
+          <div class="flex-1 flex flex-col gap-4">
+            <div id="star-rating" class="flex text-muted text-2xl cursor-pointer gap-1" data-rating="0">
+              <button type="button" onclick="setRating(1)" class="star-btn hover:scale-110 transition-transform"><iconify-icon icon="lucide:star" class="star-icon text-muted"></iconify-icon></button>
+              <button type="button" onclick="setRating(2)" class="star-btn hover:scale-110 transition-transform"><iconify-icon icon="lucide:star" class="star-icon text-muted"></iconify-icon></button>
+              <button type="button" onclick="setRating(3)" class="star-btn hover:scale-110 transition-transform"><iconify-icon icon="lucide:star" class="star-icon text-muted"></iconify-icon></button>
+              <button type="button" onclick="setRating(4)" class="star-btn hover:scale-110 transition-transform"><iconify-icon icon="lucide:star" class="star-icon text-muted"></iconify-icon></button>
+              <button type="button" onclick="setRating(5)" class="star-btn hover:scale-110 transition-transform"><iconify-icon icon="lucide:star" class="star-icon text-muted"></iconify-icon></button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <input id="reviewer-name" type="text" placeholder="Your Name" class="bg-transparent border-b border-border py-2 focus:border-primary outline-none text-sm transition-all">
+              <input id="reviewer-email" type="email" placeholder="Email Address" class="bg-transparent border-b border-border py-2 focus:border-primary outline-none text-sm transition-all">
+            </div>
+            <textarea id="reviewer-comment" placeholder="Write your review here..." rows="1" class="bg-transparent border-b border-border py-2 focus:border-primary outline-none text-sm transition-all resize-none overflow-hidden" oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px'"></textarea>
+            <div class="flex justify-end gap-3 mt-2">
+              <button onclick="resetForm()" class="px-4 py-2 text-sm font-bold text-muted-foreground hover:bg-secondary rounded-full transition-colors">Cancel</button>
+              <button onclick="submitReview()" class="px-6 py-2 text-sm font-bold bg-primary text-primary-foreground rounded-full hover:opacity-90 transition-opacity">Submit Review</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reviews Feed -->
+      <div id="reviews-feed" class="flex flex-col gap-8">
+        <!-- Real reviews always stay at the top -->
+        <div id="real-reviews-container" class="flex flex-col gap-8"></div>
+        <!-- Fake reviews loaded in batches -->
+        <div id="fake-reviews-container" class="flex flex-col gap-8"></div>
+      </div>
+
+      <!-- Load More Section -->
+      <div class="mt-12 text-center">
+        <button id="load-more-btn" onclick="triggerLoadMore()" class="px-8 py-3 rounded-full border-2 border-border text-foreground font-bold hover:bg-secondary transition-all flex items-center justify-center gap-2 mx-auto">
+          <iconify-icon icon="lucide:refresh-cw" id="load-icon" class="hidden"></iconify-icon>
+          Load More Reviews
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script for Review Logic -->
+  <script>
+    let currentRating = 0;
+    let loadedCount = 0;
+    const totalFakeReviews = 1000;
+
+    const names = ["Anjali Sharma", "Vikram Singh", "Sameer Khan", "Rohan Mehta", "Pooja Das", "Arjun Reddy", "Sana Parveen", "Karan Malhotra", "Deepa Nair", "Rahul Gupta", "Amit Verma", "Suresh Kumar", "Priya Singh", "Neha Kapoor", "Rajesh Iyer", "Sunita Devi", "Manoj Tiwari", "Anita Bose", "Sanjay Dutt", "Kavita Rao", "Vivek Oberoi", "Ritu Beri", "Alok Nath", "Shweta Tiwari", "Abhishek Bachchan", "Aishwarya Rai", "Salman Khan", "Shah Rukh Khan", "Aamir Khan", "Kareena Kapoor", "Ranbir Kapoor", "Deepika Padukone", "Virat Kohli", "MS Dhoni", "Sachin Tendulkar", "Rohit Sharma", "Hardik Pandya", "Jasprit Bumrah", "KL Rahul", "Rishabh Pant", "Aditya Roy", "Shraddha Kapoor", "Varun Dhawan", "Alia Bhatt", "Sidharth Malhotra", "Kiara Advani", "Kartik Aaryan", "Sara Ali Khan", "Janhvi Kapoor", "Ishaan Khatter", "Ananya Panday"];
+    
+    const comments = [
+      "Bhot achi website hai. Trustworthy sellers hain yahan.",
+      "Best marketplace for digital assets. Smooth transaction.",
+      "Trusted platform. Safe payment options available.",
+      "Amazing collection of websites. The verification process is top-notch.",
+      "Sold my blog here in just 48 hours. Very professional.",
+      "Great experience buying my first SaaS here. Support was helpful.",
+      "Deulpar is the gold standard for website flipping.",
+      "Highly recommend for anyone looking to start an online business.",
+      "The escrow service makes everything so safe.",
+      "Fast transfer and verified data. No complaints.",
+      "I was skeptical at first, but Deulpar proved me wrong. Excellent service.",
+      "Beautiful UI and very easy to navigate the listings.",
+      "Found a hidden gem niche site. Already making ROI.",
+      "The only place I trust for high-ticket digital acquisitions.",
+      "Support team helped me with the technical migration. 5 stars!",
+      "Transactions are lightning fast compared to other platforms.",
+      "Verified traffic stats are a lifesaver. No more fake data.",
+      "Great community of buyers and sellers.",
+      "The best investment I made this year was through Deulpar.",
+      "Simple, effective, and secure. Just what I needed.",
+      "Top-notch security features.",
+      "The listing process is very straightforward.",
+      "I love the transparency here.",
+      "Smooth handover process.",
+      "Excellent customer service response time.",
+      "Very reliable support team.",
+      "Transactions are very smooth and secure.",
+      "The escrow service is top-notch.",
+      "Great platform for entrepreneurs.",
+      "Highly recommend Deulpar for business acquisitions."
+    ];
+
+    const colors = ['bg-blue-600', 'bg-purple-600', 'bg-green-600', 'bg-orange-600', 'bg-pink-600', 'bg-indigo-600', 'bg-rose-600', 'bg-emerald-600', 'bg-amber-600', 'bg-cyan-600'];
+
+    function setRating(rating) {
+      currentRating = rating;
+      const stars = document.querySelectorAll('.star-icon');
+      stars.forEach((star, index) => {
+        if (index < rating) {
+          star.classList.add('text-yellow-400');
+          star.classList.remove('text-muted');
+          star.setAttribute('icon', 'lucide:star');
+        } else {
+          star.classList.remove('text-yellow-400');
+          star.classList.add('text-muted');
+          star.setAttribute('icon', 'lucide:star');
+        }
+      });
+      document.getElementById('star-rating').setAttribute('data-rating', rating);
+    }
+
+    function resetForm() {
+      document.getElementById('reviewer-name').value = '';
+      document.getElementById('reviewer-email').value = '';
+      document.getElementById('reviewer-comment').value = '';
+      setRating(0);
+    }
+
+    function handleReaction(btn, type) {
+      const countSpan = btn.querySelector('.count');
+      let count = parseInt(countSpan.textContent);
+      
+      if (btn.classList.contains('text-primary') || btn.classList.contains('text-destructive')) {
+        count--;
+        btn.classList.remove('text-primary', 'text-destructive');
+      } else {
+        count++;
+        btn.classList.add(type === 'like' ? 'text-primary' : 'text-destructive');
+      }
+      countSpan.textContent = count;
+    }
+
+    function createReviewElement(name, email, comment, rating, isNew = false) {
+      const firstLetter = name.charAt(0).toUpperCase();
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      // Real comments (isNew) start with 0 likes for real interaction
+      const likes = isNew ? 0 : Math.floor(Math.random() * 50);
+      const dislikes = isNew ? 0 : Math.floor(Math.random() * 5);
+      
+      const div = document.createElement('div');
+      div.className = `flex items-start gap-4 group transition-all ${isNew ? 'animate-in fade-in slide-in-from-top-4 duration-500 bg-primary/5 p-4 rounded-xl border border-primary/20' : ''}`;
+      
+      let starsHtml = '';
+      for(let i=0; i<5; i++) {
+        starsHtml += `<iconify-icon icon="lucide:star" class="${i < rating ? 'text-yellow-400' : 'text-muted'} text-[12px]"></iconify-icon>`;
+      }
+
+      div.innerHTML = `
+        <div class="w-10 h-10 rounded-full ${randomColor} flex items-center justify-center text-white font-bold shadow-sm shrink-0 uppercase">${firstLetter}</div>
+        <div class="flex-1">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-sm font-bold text-foreground">${name}</span>
+            <span class="text-[11px] text-muted-foreground">${email.toLowerCase().replace(/\s+/g, '')}</span>
+          </div>
+          <div class="flex gap-0.5 mb-1">
+            ${starsHtml}
+          </div>
+          <p class="text-sm text-foreground/90 leading-normal mb-3">${comment}</p>
+          <div class="flex items-center gap-6">
+            <button onclick="handleReaction(this, 'like')" class="flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-primary transition-colors">
+              <iconify-icon icon="lucide:thumbs-up" class="text-sm"></iconify-icon>
+              <span class="count">${likes}</span>
+            </button>
+            <button onclick="handleReaction(this, 'dislike')" class="flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-destructive transition-colors">
+              <iconify-icon icon="lucide:thumbs-down" class="text-sm"></iconify-icon>
+              <span class="count">${dislikes}</span>
+            </button>
+          </div>
+        </div>
+      `;
+      return div;
+    }
+
+    function triggerLoadMore() {
+      loadMoreReviews(50);
+    }
+
+    function loadMoreReviews(batchSize) {
+      const btn = document.getElementById('load-more-btn');
+      const icon = document.getElementById('load-icon');
+      
+      // Visual loading state
+      btn.disabled = true;
+      icon.classList.remove('hidden');
+      icon.classList.add('animate-spin');
+      
+      setTimeout(() => {
+        const container = document.getElementById('fake-reviews-container');
+        const start = loadedCount;
+        const end = Math.min(loadedCount + batchSize, totalFakeReviews);
+        
+        for (let i = start; i < end; i++) {
+          const nameIdx = (i + Math.floor(Math.random() * 10)) % names.length;
+          const name = names[nameIdx];
+          // No @ prefix at the start as requested
+          const email = name.split(' ')[0].toLowerCase() + (Math.floor(Math.random() * 9999)) + "@gmail.com";
+          const comment = comments[Math.floor(Math.random() * comments.length)];
+          
+          // Varying ratings: 5 (60%), 4 (20%), 3 (10%), 1 (10%)
+          const rand = Math.random();
+          let rating = 5;
+          if (rand < 0.1) rating = 1;
+          else if (rand < 0.2) rating = 3;
+          else if (rand < 0.4) rating = 4;
+          
+          container.appendChild(createReviewElement(name, email, comment, rating));
+        }
+        
+        loadedCount = end;
+        btn.disabled = false;
+        icon.classList.add('hidden');
+        icon.classList.remove('animate-spin');
+        
+        if (loadedCount >= totalFakeReviews) {
+          btn.innerHTML = "No more reviews to load";
+          btn.disabled = true;
+        }
+      }, 400);
+    }
+
+    function submitReview() {
+      const nameInput = document.getElementById('reviewer-name');
+      const emailInput = document.getElementById('reviewer-email');
+      const commentInput = document.getElementById('reviewer-comment');
+      
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const comment = commentInput.value.trim();
+      
+      if (!name || !email || !comment || currentRating === 0) {
+        alert('Please provide your name, email, rating, and a comment.');
+        return;
+      }
+
+      const container = document.getElementById('real-reviews-container');
+      const reviewElement = createReviewElement(name, email, comment, currentRating, true);
+      
+      container.prepend(reviewElement);
+      resetForm();
+      
+      // Scroll to the new comment
+      reviewElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Initial Load: only 5 as requested
+    window.onload = () => {
+      loadMoreReviews(5);
+    };
+  </script>
+
+  <!-- Footer -->
+  <footer class="bg-foreground text-white py-16 px-6 mt-auto">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div class="col-span-1 md:col-span-2">
+        <div class="flex items-center gap-2 mb-6">
+          <div class="bg-primary p-2 rounded-lg">
+            <iconify-icon icon="lucide:globe" class="text-white text-2xl"></iconify-icon>
+          </div>
+          <span class="text-2xl font-heading font-bold tracking-tight">Deulpar</span>
+        </div>
+        <p class="text-gray-400 max-w-sm mb-8">
+          The most trusted destination for buying and selling online businesses. Join thousands of entrepreneurs today.
+        </p>
+        <div class="flex gap-4">
+          <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"><iconify-icon icon="lucide:facebook"></iconify-icon></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"><iconify-icon icon="lucide:twitter"></iconify-icon></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"><iconify-icon icon="lucide:instagram"></iconify-icon></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-bold mb-6">Marketplace</h4>
+        <ul class="flex flex-col gap-4 text-gray-400 text-sm">
+          <li><a href="#" class="hover:text-white transition-colors">Buy Websites</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Sell Websites</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Success Stories</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-6">Support</h4>
+        <ul class="flex flex-col gap-4 text-gray-400 text-sm">
+          <li><a href="#" class="hover:text-white transition-colors">Help Center</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Safety Tips</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">full saport</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto pt-12 mt-12 border-t border-white/10 text-center text-gray-500 text-xs">
+      &copy; 2024 Deulpar Marketplace. All rights reserved.
+    </div>
+  </footer>
+</div>
+</body></html>
